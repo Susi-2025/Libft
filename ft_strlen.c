@@ -6,9 +6,11 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:11:02 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/16 14:44:19 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/21 14:50:43 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s)
 {

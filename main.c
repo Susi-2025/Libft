@@ -208,6 +208,19 @@
 //     return 0;
 // }
 
+//****ft_strchr ****ok
+// int main(void)
+// {
+//     char s[] = "Today is a good day to come back to your family";
+//     char c[] = {'1', 'w', 'e', 'a', 'n'};
+//     for (int i = 0; i < 5; i++)
+//     {
+//         printf("Std: The last position of %c in string %s is: %s \n", c[i], s, strrchr(s, c[i]));
+//         printf("Custom: The last position of %c in string %s is: %s \n", c[i], s, ft_strrchr(s, c[i]));
+//     }
+//     return 0;
+// }
+
 // ****tolower test**** test with char string and int string
 // int main(void)
 // {
@@ -246,15 +259,4 @@
 //     return 0;
 // }
 
-//****ft_strchr ****ok
-int main(void)
-{
-    char s[] = "Today is a good day to come back to your family";
-    char c[] = {'1', 'w', 'e', 'a', 'n'};
-    for (int i = 0; i < 5; i++)
-    {
-        printf("Std: The last position of %c in string %s is: %s \n", c[i], s, strrchr(s, c[i]));
-        printf("Custom: The last position of %c in string %s is: %s \n", c[i], s, ft_strrchr(s, c[i]));
-    }
-    return 0;
-}
+
