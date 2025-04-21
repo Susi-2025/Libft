@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:47:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/21 17:56:14 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/21 19:22:57 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *str)
 	str1 = (char *)str;
 	while ((*str1 >= 9 && *str1 <= 13) || (*str1 == 32))
 		str1++;
-	sign = sign_check(*str1);
+	sign = sign_check(str1);
 	if (!((*str1 >= '0') && (*str1 <= '9')))
 		return (0);
 	while ((*str1 >= '0') && (*str1 <= '9'))

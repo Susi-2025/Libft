@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/21 17:49:07 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:59:55 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,35 @@
 
 #include "ft_atoi.c"
 #include "ft_bzero.c"
+#include "ft_calloc.c"
 #include "ft_memchr.c"
 #include "ft_memcmp.c"
 #include "ft_strchr.c"
+#include "ft_strdup.c"
+#include "ft_strjoin.c"
 #include "ft_strlcat.c"
 #include "ft_strlen.c"
 #include "ft_strncmp.c"
 #include "ft_strnstr.c"
 #include "ft_strrchr.c"
+#include "ft_substr.c"
 #include "ft_toupper.c"
 #include "ft_tolower.c"
 
 // #include "strnstr.c"
 
-//****ft_atoi****
-int main(void)
-{
-    char *str[] = {"--123", "-153", "+456", "-+4869", "9012", "+1-2687", "-8a9756"};
-    for (int i = 0; i < 7; i++)
-    {
-        printf("Std: the value of %s to integer is: %i \n", str[i], atoi(str[i]));
-        printf("Cus: the value of %s to integer is: %i \n", str[i], ft_atoi(str[i]));
-    }
-    return (0);
-}
+//****ft_atoi****ok
+// int main(void)
+// {
+//     char *str[] = {"--123", "-153", "+456", "-+4869", "9012", "+1-2687", "-8a9756"};
+//     for (int i = 0; i < 7; i++)
+//     {
+//         printf("Std: the value of %s to integer is: %i \n", str[i], atoi(str[i]));
+//         printf("Cus: the value of %s to integer is: %i \n", str[i], ft_atoi(str[i]));
+//     }
+//     return (0);
+// }
+
 //****ft_bzero test **** it means test ok with all possible cases
 // int main(void)
 // {
@@ -74,6 +79,34 @@ int main(void)
 //         }
 //     if (flag == 0)
 //         printf("Std function and my function are same \n");
+//     return 0;
+// }
+
+//****ft_calloc ****/ ok
+// int main(void)
+// {
+//     size_t count = 10;
+//     size_t size = sizeof(char);
+
+//     char *std_ptr = (char *)calloc(count, size);
+//     char *custom_ptr = (char *)ft_calloc(count, size);
+
+//     if (std_ptr)
+//     {
+//         printf("Std calloc result (first 10 bytes): ");
+//         for (size_t i = 0; i < count; i++)
+//             printf("%d ", std_ptr[i]);
+//         printf("\n");
+//     }
+//     if (custom_ptr)
+//     {
+//         printf("Custom calloc result (first 10 bytes): ");
+//         for (size_t i = 0; i < count; i++)
+//             printf("%d ", custom_ptr[i]);
+//         printf("\n");
+//     }
+//     free(std_ptr);
+//     free(custom_ptr);
 //     return 0;
 // }
 
@@ -198,6 +231,27 @@ int main(void)
 //     return 0;
 // }
 
+//****ft_strdup ****ok
+// int main(void)
+// {
+//     char s[] = "Today is a good day to come back to your family";
+//     char *c = strdup(s);
+//     char *c1 = ft_strdup(s);
+//     printf("The new std duplicate string of %s is: %s \n", s, c);
+//     printf("The new std duplicate string of %s is: %s \n", s, c1);
+//     return 0;
+// }
+
+//****ft_strjoin****
+int main(void)
+{
+    char s1[] = "Hello World";
+    char s2[] = "Good Morning";
+    char *s3 = ft_strjoin(s1,s2);
+    printf("The joined string from s1: %s and s2: %s is: %s \n", s1, s2, s3);
+    return (0);
+}
+
 // ****ft_strlcat test****ok- 
 // Length of source: 25, length of destination: 8. Must change size in some cases:
 // - lesser than length of dest to see only return. Example: 5
@@ -305,10 +359,18 @@ int main(void)
 //     }
 //     return 0;
 // }
+// //****ft_substr****
+// int main(void)
+// {
+//     char s[] = "Hello World New Year European";
+//     unsigned int start = 20;
+//     size_t len  = 20;
+//     printf("The result of substr start from %i position to %i character is: %s \n", start, len, ft_substr(s,start,len));
+//     return 0;
+// }
 
 // ****tolower test**** test with char string and int string
 // int main(void)
-// {
 //     char c[] = {'1', '0', 'a', 'z', 'A', '$',' '};
 //     int d[] = {-1, 0, 255, 300};
 //     for (int i = 0; i < 7; i++)
