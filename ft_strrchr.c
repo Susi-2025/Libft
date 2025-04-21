@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:51:17 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/16 16:22:21 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/21 14:55:54 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)&p[i]);
 		i--;
 	}
-	return (NULL);
+	return ((void *)0);
 }

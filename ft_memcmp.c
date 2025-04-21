@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 15:07:20 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/21 14:54:20 by vinguyen         ###   ########.fr       */
+/*   Created: 2025/04/21 16:06:11 by vinguyen          #+#    #+#             */
+/*   Updated: 2025/04/21 16:45:57 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
-{
-	const char	*p;
+#include <stddef.h>
 
-	p = s;
-	while (*p)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*temp1;
+	unsigned char	*temp2;
+	unsigned char	i;
+
+	temp1 = (unsigned char *)s1;
+	temp2 = (unsigned char *)s2;
+	i = 0;
+	while (temp1[i] && temp2[i] && i < n)
 	{
-		if (*p == c)
-			return ((char *)p);
-		p++;
+		if (temp1[i] != temp2[i])
+			return (temp1[i] - temp2[i]);
+		i++;
 	}
-	return ((void *)0);
+	return (temp1[i] - temp2[i]);
 }

@@ -6,13 +6,14 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/16 16:19:26 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/21 17:49:07 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "ft_isalnum.c"
 #include "ft_isalpha.c"
@@ -23,15 +24,32 @@
 #include "ft_memmove.c"
 #include "ft_memset.c"
 
+#include "ft_atoi.c"
 #include "ft_bzero.c"
+#include "ft_memchr.c"
+#include "ft_memcmp.c"
 #include "ft_strchr.c"
 #include "ft_strlcat.c"
 #include "ft_strlen.c"
+#include "ft_strncmp.c"
+#include "ft_strnstr.c"
+#include "ft_strrchr.c"
 #include "ft_toupper.c"
 #include "ft_tolower.c"
 
-#include "ft_strrchr.c"
+// #include "strnstr.c"
 
+//****ft_atoi****
+int main(void)
+{
+    char *str[] = {"--123", "-153", "+456", "-+4869", "9012", "+1-2687", "-8a9756"};
+    for (int i = 0; i < 7; i++)
+    {
+        printf("Std: the value of %s to integer is: %i \n", str[i], atoi(str[i]));
+        printf("Cus: the value of %s to integer is: %i \n", str[i], ft_atoi(str[i]));
+    }
+    return (0);
+}
 //****ft_bzero test **** it means test ok with all possible cases
 // int main(void)
 // {
@@ -128,6 +146,45 @@
 //     return 0;
 // }
 
+//****ft_memchr ****ok
+// int main(void)
+// {
+//     char s[] = "Today is a good day to come back to your family";
+//     char c[] = {'1', 'y', 'e'};
+//     size_t n = 40;
+//     for (int i = 0; i < 3; i++)
+//     {
+//         void *std_ptr = memchr(s, c[i], n);
+//         void *ft_ptr = ft_memchr(s, c[i], n);
+
+//         if (std_ptr)
+//             printf("Std: The 1st position of '%c' in string \"%.*s\" is: '%c'\n", c[i], (int)n, s, *(char *)std_ptr);
+//         else
+//             printf("Std: Character '%c' not found in first %zu bytes.\n", c[i], n);
+
+//         if (ft_ptr)
+//             printf("Custom: The 1st position of '%c' in string \"%.*s\" is: '%c'\n", c[i], (int)n, s, *(char *)ft_ptr);
+//         else
+//             printf("Custom: Character '%c' not found in first %zu bytes.\n", c[i], n);
+//     }
+
+//     return 0;
+// }
+
+//****ft_memcmp****ok
+// int main(void)
+// {
+//     char *s[] = {"Hello World", "Hello", "A", "123", "a1b2c3"};
+//     char *c[] = {"Hello World", "He", "AB", "12345", "a1b2 "};
+//     size_t n = 8;
+//         for (int i = 0; i < 5; i++)
+//         {
+//             printf("Std: The comparison with %zu char of %s and %s is: %i \n", n, s[i], c[i], memcmp(s[i], c[i], n));
+//             printf("Custom: The comparison of %zu char of %s and %s is: %i \n", n, s[i], c[i], ft_memcmp(s[i], c[i], n));
+//         }
+//         return 0;  
+// }
+
 //****ft_strchr ****ok
 // int main(void)
 // {
@@ -208,7 +265,35 @@
 //     return 0;
 // }
 
-//****ft_strchr ****ok
+//****ft_strncmp test****ok
+// int main(void)
+// {
+//     char *s[] = {"Hello World", "Hello", "A", "123", "a1b2c3"};
+//     char *c[] = {"Hello World", "He", "AB", "12345", "a1b2 "};
+//     size_t n = 8;
+//         for (int i = 0; i < 5; i++)
+//         {
+//             printf("Std: The comparison of %s and %s is: %i \n", s[i], c[i], strncmp(s[i], c[i], n));
+//             printf("Custom: The comparison of %s and %s is: %i \n", s[i], c[i], ft_strncmp(s[i], c[i], n));
+//         }
+//         return 0;  
+// }
+
+//****ft_strnstr****ok
+// int main(void)
+// {
+//     char s[] = "Today is a good day to come back to your family";
+//     char *c[] = {"is", "com", "day", "12345", "your"};
+//     size_t n = 30;
+//         for (int i = 0; i < 5; i++)
+//         {
+//             printf("Std: The position of %s in string %s is: %s \n", c[i], s, strnstr(s, c[i], n));
+//             printf("Custom: The position of %s in string %s is: %s \n", c[i], s, ft_strnstr(s, c[i], n));
+//         }
+//     return 0;
+// }
+
+//****ft_strrchr ****ok
 // int main(void)
 // {
 //     char s[] = "Today is a good day to come back to your family";
