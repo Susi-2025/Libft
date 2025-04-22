@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 18:11:54 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/22 20:34:38 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 #include "ft_atoi.c"
 #include "ft_bzero.c"
 #include "ft_calloc.c"
+#include "ft_itoa.c"
 #include "ft_memchr.c"
 #include "ft_memcmp.c"
 #include "ft_putchar_fd.c"
@@ -187,6 +188,18 @@
 //     return 0;
 // }
 
+//****ft_itoa ****/
+int main(void)
+{
+    int numbers[] = {2147483647, -2147483648, 0, -42, 1337};
+    for (int i = 0; i < 5; i++)
+    {
+        char *c = ft_itoa(numbers[i]);
+        printf("The value of %i in array: %s \n", numbers[i], c);
+    }
+  return 0;
+}
+
 //****ft_memchr ****ok
 // int main(void)
 // {
@@ -236,12 +249,12 @@
 // }
 
 //****ft_putendl_fd ****/
-int main(void)
-{
-    char s[] = "Hello";
-    ft_putendl_fd(s,1);
-    return 0;
-}
+// int main(void)
+// {
+//     char s[] = "Hello";
+//     ft_putendl_fd(s,1);
+//     return 0;
+// }
 
 //****ft_putnbr_fd */
 // int main(void)
@@ -450,7 +463,7 @@ int main(void)
 //     return 0;
 // }
 
-//****ft_str_filter ****/
+//****ft_strtrim ****/
 // int main(void)
 // {
 //     char s1[] = "2Hellor1 World12 ";
