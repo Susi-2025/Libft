@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/21 20:59:55 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:39:43 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,17 @@
 #include "ft_calloc.c"
 #include "ft_memchr.c"
 #include "ft_memcmp.c"
+#include "ft_strampi.c"
 #include "ft_strchr.c"
 #include "ft_strdup.c"
+#include "ft_striteri.c"
 #include "ft_strjoin.c"
 #include "ft_strlcat.c"
 #include "ft_strlen.c"
 #include "ft_strncmp.c"
 #include "ft_strnstr.c"
 #include "ft_strrchr.c"
+#include "ft_strtrim.c"
 #include "ft_substr.c"
 #include "ft_toupper.c"
 #include "ft_tolower.c"
@@ -218,6 +221,29 @@
 //         return 0;  
 // }
 
+//****ft_strampi**** */
+// char alt_case(unsigned int i, char c)
+// {
+//     if (i % 2 == 0 && c >= 'a' && c <= 'z')
+//         return (c - 32); // lowercase to uppercase
+//     return (c);
+// }
+
+// int main(void)
+// {
+//     char *c[] = {"Hello World", "He", "AB", "12345", "a1b2 "};
+//     for (int i = 0; i < 5; i++)
+//     {
+//         char *result = ft_strampi(c[i], alt_case);
+//         if (result)
+//         {
+//             printf("Result: %s\n", result);
+//             free(result);
+//         }
+//     }
+//     return 0;
+// }
+
 //****ft_strchr ****ok
 // int main(void)
 // {
@@ -242,15 +268,34 @@
 //     return 0;
 // }
 
-//****ft_strjoin****
+//****ft_striteri ****/
+void to_uppercase(unsigned int i, char *c)
+{
+    (void)i;
+    if (*c >= 'a' && *c <= 'z')
+        *c -= 32;
+}
+
 int main(void)
 {
-    char s1[] = "Hello World";
-    char s2[] = "Good Morning";
-    char *s3 = ft_strjoin(s1,s2);
-    printf("The joined string from s1: %s and s2: %s is: %s \n", s1, s2, s3);
-    return (0);
+    char str[] = "hello world";
+
+    printf("Before: %s\n", str);
+    ft_striteri(str, to_uppercase);
+    printf("After:  %s\n", str);
+
+    return 0;
 }
+
+//****ft_strjoin****
+// int main(void)
+// {
+//     char s1[] = "Hello World 2";
+//     char s2[] = "1 Good Morning";
+//     char *s3 = ft_strjoin(s1,s2);
+//     printf("The joined string from s1: %s and s2: %s is: %s \n", s1, s2, s3);
+//     return (0);
+// }
 
 // ****ft_strlcat test****ok- 
 // Length of source: 25, length of destination: 8. Must change size in some cases:
@@ -359,6 +404,21 @@ int main(void)
 //     }
 //     return 0;
 // }
+
+//****ft_str_filter ****/
+// int main(void)
+// {
+//     char s1[] = "2Hellor1 World12 ";
+//     char *s2[] = {"2H", "2He", "d", "", "ll", "1", "2", " ", "  "};
+//     for (int i = 0; i < 10; i++)
+//     {
+//         char *s3 = ft_strtrim(s1,s2[i]);
+//         printf("The trim string from s1: %s and s2: %s is: %s \n", s1, s2[i], s3);
+//         free (s3);
+//     }
+//     return (0);
+// }
+
 // //****ft_substr****
 // int main(void)
 // {

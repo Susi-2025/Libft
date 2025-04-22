@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strampi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 19:25:02 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 10:05:45 by vinguyen         ###   ########.fr       */
+/*   Created: 2025/04/22 16:11:11 by vinguyen          #+#    #+#             */
+/*   Updated: 2025/04/22 16:24:35 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strdup(const char *s)
+char	*ft_strampi(char const *s, char (*f)(unsigned int, char))
 {
-	char				*out;
-	char				*temp_in;
-	unsigned int		i;
+	unsigned int	i;
+	char			*out;
 
 	i = 0;
-	temp_in = (char *)s;
-	while (temp_in[i])
+	while (s[i])
 		i++;
-	out = malloc(i + 1);
+	out = (char *)malloc(i + 1);
 	if (!out)
 		return (0);
 	i = 0;
-	while (temp_in[i])
+	while (s[i])
 	{
-		out[i] = temp_in[i];
+		out[i] = f(i, s[i]);
 		i++;
 	}
 	out[i] = '\0';
 	return (out);
-}	
+}

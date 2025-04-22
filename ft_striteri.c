@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 19:25:02 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 10:05:45 by vinguyen         ###   ########.fr       */
+/*   Created: 2025/04/22 16:27:31 by vinguyen          #+#    #+#             */
+/*   Updated: 2025/04/22 16:40:28 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strdup(const char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char				*out;
-	char				*temp_in;
-	unsigned int		i;
+	unsigned int	i;
 
 	i = 0;
-	temp_in = (char *)s;
-	while (temp_in[i])
-		i++;
-	out = malloc(i + 1);
-	if (!out)
-		return (0);
-	i = 0;
-	while (temp_in[i])
+	while (s[i])
 	{
-		out[i] = temp_in[i];
+		f(i, &s[i]);
 		i++;
 	}
-	out[i] = '\0';
-	return (out);
-}	
+}

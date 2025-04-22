@@ -6,18 +6,18 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 20:46:53 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/21 21:05:33 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:57:18 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	len1;
-	unsigned int	len2;
-	unsigned int	i;
-	char			*out;
+	int		len1;
+	int		len2;
+	int		i;
+	char	*out;
 
-	i = 0;
+	i = -1;
 	len1 = 0;
 	len2 = 0;
 	while (s1[len1])
@@ -27,17 +27,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	out = (char *)malloc(len1 + len2 + 1);
 	if (!out)
 		return (NULL);
-	while (i < len1)
-	{
+	while (++i < len1)
 		out[i] = s1[i];
-		i++;
-	}
-	i = 0;
-	while (i < len2)
-	{
+	i = -1;
+	while (++i < len2)
 		out[len1 + i] = s2[i];
-		i++;
-	}
 	out[len1 + i] = '\0';
 	return (out);
 }
