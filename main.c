@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 16:39:43 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/22 18:11:54 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "ft_isalnum.c"
 #include "ft_isalpha.c"
@@ -29,6 +30,10 @@
 #include "ft_calloc.c"
 #include "ft_memchr.c"
 #include "ft_memcmp.c"
+#include "ft_putchar_fd.c"
+#include "ft_putendl_fd.c"
+#include "ft_putnbr_fd.c"
+#include "ft_putstr_fd.c"
 #include "ft_strampi.c"
 #include "ft_strchr.c"
 #include "ft_strdup.c"
@@ -221,6 +226,46 @@
 //         return 0;  
 // }
 
+//****ft_putchar_fd ****/
+// int main(void)
+// {
+//     ft_putchar_fd('A', 1);
+//     ft_putchar_fd('B', 2);
+//     ft_putchar_fd('C', 0);
+//     return 0;
+// }
+
+//****ft_putendl_fd ****/
+int main(void)
+{
+    char s[] = "Hello";
+    ft_putendl_fd(s,1);
+    return 0;
+}
+
+//****ft_putnbr_fd */
+// int main(void)
+// {
+//     int i = -2147483649;
+//     int fd = 1;
+//     ft_putnbr_fd(i, fd);
+//     printf("\n");
+//     return 0;
+// }
+
+// //****ft_putstr_fd ****/
+// int main(void)
+// {
+//     char s[] = "Hello";
+//     ft_putstr_fd (s, 1);
+//     ft_putstr_fd ("\n", 1);
+//     ft_putstr_fd (s, 2);
+//     ft_putstr_fd ("\n", 1);
+//     ft_putstr_fd (s, 0);
+//     ft_putstr_fd ("\n", 1);
+//     return 0;
+// }
+
 //****ft_strampi**** */
 // char alt_case(unsigned int i, char c)
 // {
@@ -269,23 +314,23 @@
 // }
 
 //****ft_striteri ****/
-void to_uppercase(unsigned int i, char *c)
-{
-    (void)i;
-    if (*c >= 'a' && *c <= 'z')
-        *c -= 32;
-}
+// void to_uppercase(unsigned int i, char *c)
+// {
+//     (void)i;
+//     if (*c >= 'a' && *c <= 'z')
+//         *c -= 32;
+// }
 
-int main(void)
-{
-    char str[] = "hello world";
+// int main(void)
+// {
+//     char str[] = "hello world";
 
-    printf("Before: %s\n", str);
-    ft_striteri(str, to_uppercase);
-    printf("After:  %s\n", str);
+//     printf("Before: %s\n", str);
+//     ft_striteri(str, to_uppercase);
+//     printf("After:  %s\n", str);
 
-    return 0;
-}
+//     return 0;
+// }
 
 //****ft_strjoin****
 // int main(void)
