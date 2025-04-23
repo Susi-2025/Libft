@@ -6,9 +6,10 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:10:33 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 20:35:04 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/23 09:40:44 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 unsigned int	count_int(long n)
 {
 	unsigned int	i;
@@ -34,7 +35,6 @@ char	*ft_itoa(int n)
 	long			num;
 	char			*out;
 
-	sign = 0;
 	num = n;
 	count = count_int(num);
 	out = (char *)malloc(count + 1);
