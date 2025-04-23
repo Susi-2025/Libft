@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 20:34:38 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/23 15:31:38 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@
 #include "ft_putendl_fd.c"
 #include "ft_putnbr_fd.c"
 #include "ft_putstr_fd.c"
+#include "ft_split.c"
 #include "ft_strampi.c"
 #include "ft_strchr.c"
 #include "ft_strdup.c"
 #include "ft_striteri.c"
 #include "ft_strjoin.c"
 #include "ft_strlcat.c"
-#include "ft_strlen.c"
+//#include "ft_strlen.c"
 #include "ft_strncmp.c"
 #include "ft_strnstr.c"
 #include "ft_strrchr.c"
@@ -189,16 +190,16 @@
 // }
 
 //****ft_itoa ****/
-int main(void)
-{
-    int numbers[] = {2147483647, -2147483648, 0, -42, 1337};
-    for (int i = 0; i < 5; i++)
-    {
-        char *c = ft_itoa(numbers[i]);
-        printf("The value of %i in array: %s \n", numbers[i], c);
-    }
-  return 0;
-}
+// int main(void)
+// {
+//     int numbers[] = {2147483647, -2147483648, 0, -42, 1337};
+//     for (int i = 0; i < 5; i++)
+//     {
+//         char *c = ft_itoa(numbers[i]);
+//         printf("The value of %i in array: %s \n", numbers[i], c);
+//     }
+//   return 0;
+// }
 
 //****ft_memchr ****ok
 // int main(void)
@@ -278,6 +279,20 @@ int main(void)
 //     ft_putstr_fd ("\n", 1);
 //     return 0;
 // }
+
+// ****ft_split */
+int main()
+{
+  char first[] = "H1you1babyH1 1 ";
+  char c = 'H';
+  unsigned int count = ft_count(first, c);
+  printf("The string %s has been cut by %c to %i strings \n", first, c, count);
+  char **out = ft_split(first, c);
+  for (int i = 0; i <= count; i++)
+    printf("New string is %s \n", out[i]);
+    //printf("New string is %s \n", out);
+  return(0);
+}
 
 //****ft_strampi**** */
 // char alt_case(unsigned int i, char c)
