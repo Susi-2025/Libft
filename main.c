@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/23 15:31:38 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:16:35 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,8 +283,8 @@
 // ****ft_split */
 int main()
 {
-  char first[] = "H1you1babyH1 1 ";
-  char c = 'H';
+  char first[] = "   H you baby 1 1 ";
+  char c = ' ';
   unsigned int count = ft_count(first, c);
   printf("The string %s has been cut by %c to %i strings \n", first, c, count);
   char **out = ft_split(first, c);

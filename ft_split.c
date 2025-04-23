@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:47:43 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/23 15:39:46 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:16:01 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_assign(char *s, char c)
 	while (s[i] == c)
 		i++;
 	start = i;
-	while (s[i] != c)
+	while ((s[i] != c) && (s[i] != '\0'))
 		i++;
 	end = i;
 	i = 0;
