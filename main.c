@@ -283,8 +283,8 @@
 // ****ft_split */
 int main()
 {
-  char first[] = "   H you baby 1 1 ";
-  char c = ' ';
+  char first[] = "H you baby 1 1 ";
+  char c = 'H';
   unsigned int count = ft_count(first, c);
   printf("The string %s has been cut by %c to %i strings \n", first, c, count);
   char **out = ft_split(first, c);

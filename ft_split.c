@@ -89,6 +89,8 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	while (i <= count && s_temp)
 	{
+		while (*s_temp == c)
+			s_temp++;
 		out[i] = ft_assign(s_temp, c);
 		s_temp = s_temp + ft_strlen(out[i]) + 1;
 		i++;
