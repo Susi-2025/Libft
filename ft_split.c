@@ -87,7 +87,16 @@ char	**ft_split(char const *s, char c)
 	out = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!out)
 		return (0);
-	while (i <= count && s_temp)
+	while (i < count && s_temp)
+	{
+		while (*s_temp == c)
+			s_temp++;
+		if (*s_temp == '\0')
+			break ;
+		out[i] = ft_assign(s_temp, c);
+		s_temp = s_temp + ft_strlen(out[i]) + 1;
+		i++;
+	}
 	{
 		while (*s_temp == c)
 			s_temp++;

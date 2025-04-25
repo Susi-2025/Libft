@@ -15,6 +15,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t			i;
 	unsigned char	*ptr;
 
+	i = 0;
 	if (nmemb == 0 || size == 0)
 	{
 		ptr = malloc(1);
