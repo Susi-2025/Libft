@@ -9,7 +9,7 @@
 /*   Updated: 2025/04/16 12:26:53 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
 
 size_t	len_str(const char *str)
 {

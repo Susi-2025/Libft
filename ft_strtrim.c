@@ -9,6 +9,8 @@
 /*   Updated: 2025/04/22 14:48:30 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 unsigned int	find_start(char const *str, char const *set)
 {
 	unsigned int	i;

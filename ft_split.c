@@ -9,16 +9,16 @@
 /*   Updated: 2025/04/23 17:16:01 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+// unsigned int	ft_strlen(const char *s)
+// {
+// 	unsigned int	i;
 
-unsigned int	ft_strlen(const char *s)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }
 
 unsigned int	ft_count(const char *s, char c)
 {

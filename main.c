@@ -9,49 +9,8 @@
 /*   Updated: 2025/04/23 17:16:35 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-#include "ft_isalnum.c"
-#include "ft_isalpha.c"
-#include "ft_isascii.c"
-#include "ft_isdigit.c"
-#include "ft_isprint.c"
-#include "ft_memcpy.c"
-#include "ft_memmove.c"
-#include "ft_memset.c"
-
-#include "ft_atoi.c"
-#include "ft_bzero.c"
-#include "ft_calloc.c"
-#include "ft_itoa.c"
-#include "ft_memchr.c"
-#include "ft_memcmp.c"
-#include "ft_putchar_fd.c"
-#include "ft_putendl_fd.c"
-#include "ft_putnbr_fd.c"
-#include "ft_putstr_fd.c"
-#include "ft_split.c"
-#include "ft_strampi.c"
-#include "ft_strchr.c"
-#include "ft_strdup.c"
-#include "ft_striteri.c"
-#include "ft_strjoin.c"
-#include "ft_strlcat.c"
-//#include "ft_strlen.c"
-#include "ft_strncmp.c"
-#include "ft_strnstr.c"
-#include "ft_strrchr.c"
-#include "ft_strtrim.c"
-#include "ft_substr.c"
-#include "ft_toupper.c"
-#include "ft_tolower.c"
-
-// #include "strnstr.c"
+#include "libft.h"
 
 //****ft_atoi****ok
 // int main(void)
@@ -120,72 +79,63 @@
 //     return 0;
 // }
 
-// remain test
+//****ft_isascii ****ok
+int main(void)
+{
+    char c[] = {'a', '1', '!', 'A', 'Z', '0', '9', 0, -1, 100};
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Std: Check the character %i with std function: %d \n", c[i], isascii(c[i]));
+        printf("Cus: Check the character %i with my function: %d \n", c[i], ft_isascii(c[i]));
+    }
+    return 0;
+}
+
+//****ft_isalnum ****ok
 // int main(void)
 // {
-//     // char c1 = 'y';
-//     // char c2 =  '@';
-//     // char c3 =  'H';
-//     // int c4 = 2358;
-//     // //char c5 = '-9';
-//     // int c5 = -1;
-//     // int c6 = 300;
-//     // int c7 = -1;
-//     // char s1[30] = "Hello WorldNow Oh Babies";
-//     char s2[30] = "Nobody better than you";
-//     char s3[30] = "";
-//     // char s4[30] = "Baby One More Time";
-//     char s4[30] = "";
-//     // int c = 300;
-//     int n = 20;
-//     //isalpha
-//     // printf("Check the character %c with std function: %d \n", c1, isalpha(c1));
-//     // printf("Check the character %c with my function: %d \n", c1, ft_isalpha(c1));
-//     // printf("Check the character %c with std function: %d \n", c2, isalpha(c2));
-//     // printf("Check the character %c with my function: %d \n", c2, ft_isalpha(c2));
-//     // printf("Check the character %c with std function: %d \n", c3, isalpha(c3));
-//     // printf("Check the character %c with my function: %d \n", c3, ft_isalpha(c3));
-//     //isdigt
-//     // printf("Check the character %c with std function: %d \n", c4, isdigit(c4));
-//     // printf("Check the character %c with my function: %d \n", c4, ft_isdigit(c4));
-//     // printf("Check the character %i with std function: %i \n", c5, isdigit(-1));
-//     // printf("Check the character %i with my function: %i \n", c5, ft_isdigit(-1));
-//     // printf("Check the character %c with std function: %d \n", c1, isdigit(c1));
-//     // printf("Check the character %c with my function: %d \n", c1, ft_isdigit(c1));
-//     // printf("Check the character %i with std function: %d \n", c6, isdigit(c6));
-//     // printf("Check the character %i with my function: %d \n", c6, ft_isdigit(c6));
-//     // //int a = (isdigit('3') == ft_isdigit('3'));
-//     // printf("Check the comparison is: %i \n", (isdigit('-3') == ft_isdigit('-3')));
-//     //isalnum
-//     // printf("Check the character %i with std function: %d \n", c4, isalnum(c4));
-//     // printf("Check the character %i with my function: %d \n", c4, ft_isalnum(c4));
-//     // printf("Check the character %i with std function: %d and my function is: %d \n", c7, isascii(c7), ft_isascii(c7));
-//     // printf("Check the character %i with std function: %d and my function is: %d \n", c7, isprint(c7), ft_isprint(c7));
-//     // printf("Length of string %s in std function and my function is: %d vs %d \n", s1, strlen(s1), ft_strlen(s1));
-//     //printf("New string after std memset for %i character by value %i is: %s \n", n, c, memset(s2,c,n));3
-//     //memset(s2,c,n);
-//     // bzero(s2,n);
-//     // ft_bzero(s3,n);
-//     // memcpy(s3, s2, n);
-//     // ft_memcpy(s4, s2, n);
-//     memmove(s3, s2, n);
-//     ft_memmove(s4, s2, n);
-//     for (int i = 0; i < 30; i++)
-//         printf("%02x ", s2[i]);
-//     printf("\n");
-//     for (int i = 0; i < 30; i++)
-//         printf("%02x ", s3[i]);
-//     printf("\n");
-//     for (int i = 0; i < 30; i++)
-//         printf("%02x ", s4[i]);
-//     memmove(&s3[10], &s3[0], 15);
-//     ft_memmove(&s4[10], &s4[0], 15);
-//     printf("\n");
-//     for (int i = 0; i < 30; i++)
-//         printf("%02x ", s3[i]);
-//     printf("\n");
-//     for (int i = 0; i < 30; i++)
-//         printf("%02x ", s4[i]);
+//   char c[] = {'a', '1', '!', 'A', 'Z', '0', '9', 0, -1, 300};
+//   for (int i = 0; i < 10; i++)
+//   {
+//     printf("Std: Check the character %i with std function: %d \n", c[i], isalnum(c[i]));
+//     printf("Cus: Check the character %i with my function: %d \n", c[i], ft_isalnum(c[i]));
+//   }
+//   return 0;
+// }
+
+//****ft_isalpha */
+// int main(void)
+// {
+//     char c[] = {'a', '1', '!', 'A', 'Z', '0', '9', 0, -1, 300, ' '};
+//     for (int i = 0; i < 11; i++)
+//     {
+//         printf("Std: Check the character %i with std function: %d \n", c[i], isalpha(c[i]));
+//         printf("Cus: Check the character %i with my function: %d \n", c[i], ft_isalpha(c[i]));
+//     }
+//     return 0;
+// }
+
+//****ft_isdigit ****ok
+// int main (void)
+// {
+//     char c[] = {'a', '1', '!', 'A', 'Z', '0', '9', 0, -1, 300};
+//     for (int i = 0; i < 10; i++)
+//     {
+//         printf("Std: Check the character %i with std function: %d \n", c[i], isdigit(c[i]));
+//         printf("Cus: Check the character %i with my function: %d \n", c[i], ft_isdigit(c[i]));
+//     }
+//     return 0;
+// }
+
+//***ft_isdigit */
+// int main(void)
+// {
+//     char c[] = {'a', '1', '!', 'A', 'Z', '0', '9', 0, -1, 300};
+//     for (int i = 0; i < 10; i++)
+//     {
+//         printf("Std: Check the character %i with std function: %d \n", c[i], isdigit(c[i]));
+//         printf("Cus: Check the character %i with my function: %d \n", c[i], ft_isdigit(c[i]));
+//     }
 //     return 0;
 // }
 
@@ -240,6 +190,93 @@
 //         return 0;  
 // }
 
+//****ft_memcpy ****ok
+// int main(void)
+// {
+//     char s1[50] = "Nobody better than you my lovely babies";
+//     char std_copy[50];
+//     char my_copy[50];
+//     int n = 10;
+//     int flag = 0;
+
+//     memcpy(std_copy, s1, n);
+//     ft_memcpy(my_copy, s1, n);
+
+//     for (int i = 0; i < n; i++)
+//         printf("%d ", (unsigned char)std_copy[i]);
+//     printf("\n");
+
+//     for (int i = 0; i < 50; i++)
+//         printf("%d ", (unsigned char)my_copy[i]);
+//     printf("\n");
+
+//     for (int i = 0; i < 50; i++) {
+//         if (std_copy[i] != my_copy[i]) {
+//             printf("There is a difference at position: %i\n", i);
+//             flag++;
+//         }
+//     }
+
+//     if (flag == 0)
+//         printf("Std function and my function are the same\n");
+
+//     return 0;
+// }
+
+//****ft_memmove */
+// int main(void)
+// {
+//     char s1[50] = "Nobody better than you my lovely babies";
+//     char s2[50];
+//     char s3[50];
+//     int n = 20;
+//     int flag = 0;
+
+//     memmove(s2, s1, n);
+//     ft_memmove(s3, s1, n);
+
+//     for (int i = 0; i < 50; i++)
+//         printf("%d ", (unsigned char)s2[i]);
+//     printf("\n");
+
+//     for (int i = 0; i < 50; i++)
+//         printf("%d ", (unsigned char)s3[i]);
+//     printf("\n");
+
+//     for (int i = 0; i <= n; i++) {
+//         if (s2[i] != s3[i]) {
+//             printf("There is a difference at position: %i\n", i);
+//             flag++;
+//         }
+//     }
+
+//     if (flag == 0)
+//         printf("Std function and my function are the same\n");
+
+//     return 0;
+// }
+
+//****ft_memset ****/
+// int main(void)
+// {
+//     char s1[50] = "Nobody better than you my lovely babies";
+//     char s2[50] = "Nobody better than you my lovely babies";
+//     int n = 10;
+
+//     memset(s1, 'A', n);
+//     ft_memset(s2, 'A', n);
+
+//     for (int i = 0; i < 50; i++)
+//         printf("%d ", (unsigned char)s1[i]);
+//     printf("\n");
+
+//     for (int i = 0; i < 50; i++)
+//         printf("%d ", (unsigned char)s2[i]);
+//     printf("\n");
+
+//     return 0;
+// }
+
 //****ft_putchar_fd ****/
 // int main(void)
 // {
@@ -281,25 +318,25 @@
 // }
 
 // ****ft_split */
-int main()
-{
-  char first[] = "HHHHH you H baby1231";
-  char c = 'H';
-  unsigned int count = ft_count(first, c);
-  printf("The string %s has been cut by %c to %i strings \n", first, c, count);
-  char **out = ft_split(first, c);
-  for (unsigned int i = 0; i <= count; i++)
-  {
-    if (out[i] != NULL)
-      printf("New string is %s \n", out[i]);
-    else
-      printf("NULL pointer reached at index %d\n", i);
-  }
-  //if (out[count + 1] == NULL)
-  //  printf("NULL pointer reached at index %d\n", count + 1);
-    //printf("New string is %s \n", out);
-  return(0);
-}
+// int main()
+// {
+//   char first[] = "HHHHH you H baby1231";
+//   char c = 'H';
+//   unsigned int count = ft_count(first, c);
+//   printf("The string %s has been cut by %c to %i strings \n", first, c, count);
+//   char **out = ft_split(first, c);
+//   for (unsigned int i = 0; i <= count; i++)
+//   {
+//     if (out[i] != NULL)
+//       printf("New string is %s \n", out[i]);
+//     else
+//       printf("NULL pointer reached at index %d\n", i);
+//   }
+//   //if (out[count + 1] == NULL)
+//   //  printf("NULL pointer reached at index %d\n", count + 1);
+//     //printf("New string is %s \n", out);
+//   return(0);
+// }
 
 //****ft_strampi**** */
 // char alt_case(unsigned int i, char c)

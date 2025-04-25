@@ -9,8 +9,7 @@
 /*   Updated: 2025/04/21 16:46:56 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

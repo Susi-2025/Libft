@@ -9,6 +9,7 @@
 /*   Updated: 2025/04/22 16:24:35 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_strampi(char const *s, char (*f)(unsigned int, char))
 {
