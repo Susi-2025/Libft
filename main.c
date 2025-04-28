@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 15:53:35 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 17:40:57 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,25 @@
 //     }
 //     return (0);
 // }
+// extra test for a_toi
 
+// int main()
+// {
+//     // Test cases to demonstrate the ft_atoi function
+//      printf("Test 1: ft_atoi(\" 42\") = %d, std_atoi(\" 42\") = %d\n", ft_atoi(" 42"), atoi(" 42"));
+//     printf("Test 2: ft_atoi(\"   -42\") = %d, std_atoi(\"   -42\") = %d\n", ft_atoi("   -42"), atoi("   -42"));
+//     printf("Test 3: ft_atoi(\"42abc\") = %d, std_atoi(\"42abc\") = %d\n", ft_atoi("42abc"), atoi("42abc"));
+//     printf("Test 4: ft_atoi(\"a42\") = %d, std_atoi(\"a42\") = %d\n", ft_atoi("a42"), atoi("a42"));
+//     printf("Test 5: ft_atoi(\"\") = %d, std_atoi(\"\") = %d\n", ft_atoi(""), atoi(""));
+//     printf("Test 6: ft_atoi(\"+-42\") = %d, std_atoi(\"+-42\") = %d\n", ft_atoi("+-42"), atoi("+-42"));
+//     printf("Test 7: ft_atoi(\"-2147483648\") = %d, std_atoi(\"-2147483648\") = %d\n", ft_atoi("-2147483648"), atoi("-2147483648"));
+//     printf("Test 8: ft_atoi(\"2147483647\") = %d, std_atoi(\"2147483647\") = %d\n", ft_atoi("2147483647"), atoi("2147483647"));
+//     printf("Test 9: ft_atoi(\"9999999999\") = %d, std_atoi(\"9999999999\") = %d\n", ft_atoi("9999999999"), atoi("9999999999"));
+//     printf("Test 10: ft_atoi(\"-9999999999\") = %d, std_atoi(\"-9999999999\") = %d\n", ft_atoi("-9999999999"), atoi("-9999999999"));
+
+
+//     return 0;
+// }
 //****ft_bzero test **** it means test ok with all possible cases
 // int main(void)
 // {
@@ -589,6 +607,105 @@
 //     print_bytes(buffer_test, size);
 //     return(0);
 // }
+// int main(void)
+// {
+//     char dest[30];
+//     char *src = "AAAAAAAAA";
+
+//     // Test 1
+//     memset(dest, 0, 30);
+//     dest[0] = 'B';
+//     printf("Test 1: ");
+//     printf("Result: %zu, Expected: %zu, String: %s\n", ft_strlcat(dest, src, 0), strlen(src), dest);
+//     printf("Result: %zu, Expected: %zu, String: %s\n", strlcat(dest, src, 0), strlen(src), dest);
+
+//     // Test 2
+//     memset(dest, 0, 30);
+//     dest[0] = 'B';
+//     printf("Test 2: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, src, 1), 10, dest);
+
+//     // Test 3
+//     memset(dest, 'B', 4);
+//     printf("Test 3: ");
+//     printf("Result: %zu, Expected: %zu, String: %s\n", ft_strlcat(dest, src, 3), 3 + strlen(src), dest);
+//     printf("Result: %zu, Expected: %zu, String: %s\n", strlcat(dest, src, 3), 3 + strlen(src), dest);
+
+//     // Test 4
+//     memset(dest, 'B', 4);
+//     printf("Test 4: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, src, 6), 13, dest);
+
+//     // Test 5
+//     memset(dest, 'C', 5);
+//     printf("Test 5: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, src, -1), 14, dest);
+
+//     // Test 6
+//     memset(dest, 'C', 15);
+//     printf("Test 6: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, src, 17), 24, dest);
+
+//     // Test 7
+//     memset(dest, 0, 30);
+//     printf("Test 7: ");
+//     printf("Result: %zu, Expected: %zu, String: %s\n", ft_strlcat(dest, src, 1), strlen(src), dest);
+
+//     // Test 8
+//     memset(dest, 0, 30);
+//     memset(dest, '1', 10);
+//     printf("Test 8: ");
+//     printf("Result: %zu, Expected: %zu, String: %s\n", ft_strlcat(dest, src, 5), strlen(src) + 5, dest);
+
+//     // Test 9
+//     memset(dest, 0, 30);
+//     memset(dest, '1', 10);
+//     printf("Test 9: ");
+//     printf("Result: %zu, Expected: %zu, String: %s\n", ft_strlcat(dest, src, 5), strlen(src) + 5, dest);
+
+//     // Test 10
+//     memset(dest, 0, 30);
+//     memset(dest, '1', 10);
+//     printf("Test 10: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, "", 15), 10, dest);
+
+//     // Test 11
+//     memset(dest, 0, 30);
+//     printf("Test 11: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, "", 42), 0, dest);
+
+//     // Test 12
+//     memset(dest, 0, 30);
+//     printf("Test 12: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, "", 0), 0, dest);
+
+//     // Test 13
+//     memset(dest, 0, 30);
+//     printf("Test 13: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, "123", 1), 3, dest);
+
+//     // Test 14
+//     memset(dest, 0, 30);
+//     printf("Test 14: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, "123", 2), 3, dest);
+
+//     // Test 15
+//     memset(dest, 0, 30);
+//     printf("Test 15: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, "123", 3), 3, dest);
+
+//     // Test 16
+//     memset(dest, 0, 30);
+//     printf("Test 16: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, "123", 4), 3, dest);
+
+//     // Test 17
+//     memset(dest, 0, 30);
+//     printf("Test 17: ");
+//     printf("Result: %zu, Expected: %i, String: %s\n", ft_strlcat(dest, "123", 0), 3, dest);
+
+//     return 0;
+// }
 
 // ****ft_strlcpy test****ok- 
 // Length of source: 25, length of destination: 8. Must change size in some cases:
@@ -670,26 +787,26 @@
 //         }
 //         return 0;  
 // }
-int main(void)
-{
-    // Test cases for ft_strncmp
-    printf("Test 1: ft_strncmp(\"t\", \"\", 0) == 0 -> ");
-    printf("%d\n", ft_strncmp("t", "", 0) == 0);
+// int main(void)
+// {
+//     // Test cases for ft_strncmp
+//     printf("Test 1: ft_strncmp(\"t\", \"\", 0) == 0 -> ");
+//     printf("%d\n", ft_strncmp("t", "", 0));
 
-    printf("Test 2: ft_strncmp(\"1234\", \"1235\", 3) == 0 -> ");
-    printf("%d\n", ft_strncmp("1234", "1235", 3) == 0);
+//     printf("Test 2: ft_strncmp(\"1234\", \"1235\", 3) == 0 -> ");
+//     printf("%d\n", ft_strncmp("1234", "1235", 3));
 
-    printf("Test 3: ft_strncmp(\"1234\", \"1235\", 4) < 0 -> ");
-    printf("%d\n", ft_strncmp("1234", "1235", 4) < 0);
+//     printf("Test 3: ft_strncmp(\"1234\", \"1235\", 4) < 0 -> ");
+//     printf("%d\n", ft_strncmp("1234", "1235", 4));
 
-    printf("Test 4: ft_strncmp(\"1234\", \"1235\", -1) < 0 -> ");
-    printf("%d\n", ft_strncmp("1234", "1235", -1) < 0);
+//     printf("Test 4: ft_strncmp(\"1234\", \"1235\", -1) < 0 -> ");
+//     printf("%d\n", ft_strncmp("1234", "1235", -1));
 
-    printf("Test 5: ft_strncmp(\"\", \"\", 42) == 0 -> ");
-    printf("%d\n", ft_strncmp("", "", 42) == 0);
+//     printf("Test 5: ft_strncmp(\"\", \"\", 42) == 0 -> ");
+//     printf("%d\n", ft_strncmp("", "", 42));
 
-    return 0;
-}
+//     return 0;
+// }
 
 //****ft_strnstr****ok
 // int main(void)
@@ -704,6 +821,116 @@ int main(void)
 //         }
 //     return 0;
 // }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int main() {
+//     char haystack[30] = "aaabcabcd";
+//     char needle[10] = "aabc";
+//     char *empty = (char*)"";
+    
+//     /* 1 */
+//     printf("Test 1: ");
+//     if (ft_strnstr(haystack, needle, 0) == 0)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 2 */
+//     printf("Test 2: ");
+//     if (ft_strnstr(haystack, needle, -1) == haystack + 1)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 3 */
+//     printf("Test 3: ");
+//     if (ft_strnstr(haystack, "a", -1) == haystack)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 4 */
+//     printf("Test 4: ");
+//     if (ft_strnstr(haystack, "c", -1) == haystack + 4)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 5 */
+//     printf("Test 5: ");
+//     if (ft_strnstr(empty, "", -1) == empty)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 6 */
+//     printf("Test 6: ");
+//     if (ft_strnstr(empty, "", 0) == empty)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 7 */
+//     printf("Test 7: ");
+//     if (ft_strnstr(empty, "coucou", -1) == 0)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 8 */
+//     printf("Test 8: ");
+//     if (ft_strnstr(haystack, "aaabc", 5) == haystack)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+   
+//     /* 9 */
+//     printf("Test 9: ");
+//     if (ft_strnstr(empty, "12345", 5) == 0)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 10 */
+//     printf("Test 10: ");
+//     if (ft_strnstr(haystack, "abcd", 9) == haystack + 5)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+    
+//     /* 11 */
+//     printf("Test 11: ");
+//     if (ft_strnstr(haystack, "cd", 8) == NULL)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+   
+//     /* 12 mbueno-g */
+//     printf("Test 12: ");
+//     if (ft_strnstr(haystack, "a", 1) == haystack)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+  
+//     /* 13 opsec-infosec */
+//     printf("Test 13: ");
+//     if (ft_strnstr("1", "a", 1) == NULL)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+   
+//     /* 14 opsec-infosec */
+//     printf("Test 14: ");
+//     if (ft_strnstr("22", "b", 2) == NULL)
+//         printf("Pass\n");
+//     else
+//         printf("Fail\n");
+
+//     return 0;
+// }
+
 
 //****ft_strrchr ****ok
 // int main(void)

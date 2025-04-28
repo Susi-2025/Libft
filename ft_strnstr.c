@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:17:31 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/21 16:46:56 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 17:15:40 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		if (big1[i] == little1[j])
 		{
-			while ((big1[i + j] == little1[j]) && little1[j] && (i < len))
+			while ((big1[i + j] == little1[j]) && little1[j] && ((i + j) < len))
 				j++;
 			if (little1[j] == '\0')
 				return (&big1[i]);

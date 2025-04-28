@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:27:14 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:33:01 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 17:03:22 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -30,8 +30,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	len_dst = len_str(dst);
 	len_src = len_str(src);
 	i = 0;
-	if (dstsize <= len_dst)
-		return (len_dst + len_src);
+	if (dstsize == 0)
+		return (len_src);
+	else if (dstsize <= len_dst)
+		return (dstsize + len_src);
 	while (src[i] && ((len_dst + i) < (dstsize - 1)))
 	{
 		dst[len_dst + i] = src[i];
