@@ -6,70 +6,30 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 12:04:20 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:33:40 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 19:56:22 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-static unsigned int	find_start(char const *str, char const *set)
-{
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (set[j])
-		{
-			if (str[i] != set[j])
-				return (i);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-static unsigned int	find_end(char const *str, char const *set, unsigned int len)
-{
-	unsigned int	i;
-	unsigned int	j;
-
-	i = len - 1;
-	while (str[i])
-	{
-		j = 0;
-		while (set[j])
-		{
-			if (str[i] != set[j])
-				return (i);
-			j++;
-		}
-		i--;
-	}
-	return (len - 1);
-}
 
 char	*ft_strtrim(char const *str, char const *set)
 {
 	unsigned int	start;
 	unsigned int	end;
-	unsigned int	len;
 	unsigned int	k;
 	char			*out;
 
-	len = 0;
+	end = ft_strlen(str) - 1;
+	start = 0;
 	k = 0;
-	if (set[len] == '\0')
-		return (0);
-	while (str[len])
-		len++;
-	out = (char *)malloc(len + 1);
+	if (!str || !set)
+		return (NULL);
+	while (ft_strchr(set, str[start]))
+		start++;
+	while (ft_strrchr(set, str[end]))
+		end--;
+	out = (char *)malloc(end - start + 2);
 	if (!out)
-		return (0);
-	start = find_start(str, set);
-	end = find_end(str, set, len);
+		return (NULL);
 	while (start <= end)
 	{
 		out[k] = str[start];
