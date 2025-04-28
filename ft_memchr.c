@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 15:44:35 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/21 16:01:40 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 15:03:22 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	c1 = (unsigned char)c;
 	s1 = (unsigned char *)s;
-	while (s1[i] && (i < n))
+	while (i < n)
 	{
 		if (s1[i] == c1)
 			return ((void *)&s1[i]);

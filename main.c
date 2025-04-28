@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:42:50 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 15:53:35 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,39 @@
 //     return 0;
 // }
 
+// int main(void)
+// {
+
+//     char s[] = {0, 1, 2, 3, 4, 5};
+
+//         // Test case 1: Checking when length is 0
+//     void *result1 = ft_memchr(s, 0, 0);
+//     printf("Result 1: %p\n", result1);
+//     printf("Test 1: %s\n", result1 == NULL ? "Passed" : "Failed");
+
+//     // Test case 2: Checking for match at the start
+//     void *result2 = ft_memchr(s, 0, 1);
+//     printf("Result 2: %p\n", result2);
+//     printf("Test 2: %s\n", result2 == s ? "Passed" : "Failed");
+
+//     // Test case 3: Checking for match in the middle
+//     void *result3 = ft_memchr(s, 2, 3);
+//     printf("Result 3: %p\n", result3);
+//     printf("Test 3: %s\n", result3 == s + 2 ? "Passed" : "Failed");
+
+//     // Test case 4: Checking for no match (value larger than any byte in the array)
+//     void *result4 = ft_memchr(s, 6, 6);
+//     printf("Result 4: %p\n", result4);
+//     printf("Test 4: %s\n", result4 == NULL ? "Passed" : "Failed");
+
+//     // Test case 5: Checking for wraparound (e.g., 258 would be equivalent to 2)
+//     void *result5 = ft_memchr(s, 2 + 256, 3);  // 2 + 256 == 258, which wraps around to 2
+//     printf("Result 5: %p\n", result5);
+//     printf("Test 5: %s\n", result5 == s + 2 ? "Passed" : "Failed");
+
+//     return (0);
+// }
+
 //****ft_memcmp****ok
 // int main(void)
 // {
@@ -188,6 +221,35 @@
 //             printf("Custom: The comparison of %zu char of %s and %s is: %i \n", n, s[i], c[i], ft_memcmp(s[i], c[i], n));
 //         }
 //         return 0;  
+// }
+// int main(void)
+// {
+//     char s[] = {-128, 0, 127, 0};
+//     char sCpy[] = {-128, 0, 127, 0};
+//     char s2[] = {0, 0, 127, 0};
+//     char s3[] = {0, 0, 42, 0};
+
+//     // Test 1: Check if s and sCpy are identical
+//     int result1 = ft_memcmp(s, sCpy, 4);
+//     printf("Result 1: %d\n", result1);  // Expected: 0 (They should be equal)
+
+//     // Test 2: Check if comparing the first 0 bytes returns 0 (identical)
+//     int result2 = ft_memcmp(s, s2, 0);
+//     printf("Result 2: %d\n", result2);  // Expected: 0 (Nothing to compare)
+
+//     // Test 3: Compare the first byte of s and s2, expect a positive value since s[0] = -128 and s2[0] = 0
+//     int result3 = ft_memcmp(s, s2, 1);
+//     printf("Result 3: %d\n", result3);  // Expected: Positive (s[0] < s2[0])
+
+//     // Test 4: Compare the first byte of s2 and s, expect a negative value since s2[0] = 0 and s[0] = -128
+//     int result4 = ft_memcmp(s2, s, 1);
+//     printf("Result 4: %d\n", result4);  // Expected: Negative (s2[0] > s[0])
+
+//     // Test 5: Compare s2 and s3, expect non-zero result since they differ at s2[2] and s3[2]
+//     int result5 = ft_memcmp(s2, s3, 4);
+//     printf("Result 5: %d\n", result5);  // Expected: Non-zero (different values at s2[2] and s3[2])
+
+//     return 0;
 // }
 
 //****ft_memcpy ****ok
@@ -256,6 +318,49 @@
 //     return 0;
 // }
 
+// int main(void)
+// {
+//     char s[] = {65, 66, 67, 68, 69, 0, 45};       // 'ABCDE-'
+//     char s0[] = { 0,  0,  0,  0,  0,  0, 0};     // all zeroes
+//     char sCpy[] = {65, 66, 67, 68, 69, 0, 45};    // copy of 'ABCDE-'
+//     char sResult[] = {67, 68, 67, 68, 69, 0, 45}; // expected result after forward move
+//     char sResult2[] = {67, 67, 68, 68, 69, 0, 45}; // expected result after reverse move
+
+//     // Test 1: Compare ft_memmove with standard memmove for moving data
+//     ft_memmove(s0, s, 7);  // Use your ft_memmove function here
+//     if (memcmp(s0, s, 7) == 0) {
+//         printf("Test 1 passed: ft_memmove works like memmove\n");
+//     } else {
+//         printf("Test 1 failed: ft_memmove doesn't match memmove\n");
+//     }
+
+//     // Test 2: Test with 0 length (no change expected)
+//     ft_memmove(s, s + 2, 0);
+//     if (memcmp(s, sCpy, 7) == 0) {
+//         printf("Test 2 passed: ft_memmove with 0 length works\n");
+//     } else {
+//         printf("Test 2 failed: ft_memmove with 0 length doesn't work\n");
+//     }
+
+//     // Test 3: Move forward
+//     ft_memmove(s, s + 2, 2);
+//     if (memcmp(s, sResult, 7) == 0) {
+//         printf("Test 3 passed: ft_memmove forwards correctly\n");
+//     } else {
+//         printf("Test 3 failed: ft_memmove forwards incorrectly\n");
+//     }
+
+//     // Test 4: Move in reverse
+//     ft_memmove(sResult + 1, sResult, 2);
+//     if (memcmp(sResult, sResult2, 7) == 0) {
+//         printf("Test 4 passed: ft_memmove in reverse works correctly\n");
+//     } else {
+//         printf("Test 4 failed: ft_memmove in reverse doesn't work\n");
+//     }
+
+//     return 0;
+// }
+
 //****ft_memset ****/
 // int main(void)
 // {
@@ -305,17 +410,17 @@
 // }
 
 // //****ft_putstr_fd ****/
-int main(void)
-{
-    char s[] = "Hello";
-    ft_putstr_fd (s, 1);
-    ft_putstr_fd ("\n", 1);
-    ft_putstr_fd (s, 2);
-    ft_putstr_fd ("\n", 1);
-    ft_putstr_fd (s, 0);
-    ft_putstr_fd ("\n", 1);
-    return 0;
-}
+// int main(void)
+// {
+//     char s[] = "Hello";
+//     ft_putstr_fd (s, 1);
+//     ft_putstr_fd ("\n", 1);
+//     ft_putstr_fd (s, 2);
+//     ft_putstr_fd ("\n", 1);
+//     ft_putstr_fd (s, 0);
+//     ft_putstr_fd ("\n", 1);
+//     return 0;
+// }
 
 // ****ft_split */
 // int main()
@@ -430,6 +535,22 @@ int main(void)
 //     }
 //     printf("\n");
 // }
+// ****ft_strlcat test****ok- 
+// Length of source: 25, length of destination: 8. Must change size in some cases:
+// - lesser than length of dest to see only return. Example: 5
+// - lesser or equal than sum of length dest and length source to see the concatrate. Example: 30
+// - bigger than sum of length dest and length source to see the full copy . Example 35
+// void print_bytes(const char *str, size_t len)
+// {
+//     for (size_t i = 0; i < len; i++)
+//     {
+//         if (str[i] == '\0')
+//             printf("Byte %zu: NULL terminator\n", i);
+//         else
+//             printf("Byte %zu: %c (%d)\n", i, str[i], str[i]);
+//     }
+//     printf("\n");
+// }
 
 // int main()
 // {
@@ -448,6 +569,61 @@ int main(void)
 //     strcpy(buffer_test,first);
 //     r = strlcat(buffer,last,size);
 //     r_test = ft_strlcat(buffer_test,last,size);
+
+//     puts("Standard buffer:");
+//     puts(buffer);
+//     printf("\n");
+    
+//     puts("My custom buffer.");
+//     puts(buffer_test);
+//     printf("\n");
+    
+//     printf("Value returned with std function: %d\n",r);
+//     printf("Value returned with my function: %d\n",r_test);
+//     if( r >= size )
+//         puts("String truncated");
+//     else
+//         puts("String was fully copied");
+
+//     print_bytes(buffer, size);
+//     print_bytes(buffer_test, size);
+//     return(0);
+// }
+
+// ****ft_strlcpy test****ok- 
+// Length of source: 25, length of destination: 8. Must change size in some cases:
+// - lesser than length of dest to see only return. Example: 5
+// - lesser or equal than sum of length dest and length source to see the concatrate. Example: 30
+// - bigger than sum of length dest and length source to see the full copy . Example 35
+// void print_bytes(const char *str, size_t len)
+// {
+//     for (size_t i = 0; i < len; i++)
+//     {
+//         if (str[i] == '\0')
+//             printf("Byte %zu: NULL terminator\n", i);
+//         else
+//             printf("Byte %zu: %c (%d)\n", i, str[i], str[i]);
+//     }
+//     printf("\n");
+// }
+
+// int main()
+// {
+//     char first[] = "This is ";
+//     char last[] = "a potentially long string";
+//     int r;
+//     int r_test;
+//     int size = 40;
+//     char buffer[size];
+//     char buffer_test[size];
+
+//     printf("Length of source: %ld \n", ft_strlen(last));
+//     printf("Length of destination: %ld \n", ft_strlen(first));
+
+//     strcpy(buffer,first);
+//     strcpy(buffer_test,first);
+//     r = strlcpy(buffer,last,size);
+//     r_test = ft_strlcpy(buffer_test,last,size);
 
 //     puts("Standard buffer:");
 //     puts(buffer);
@@ -494,6 +670,26 @@ int main(void)
 //         }
 //         return 0;  
 // }
+int main(void)
+{
+    // Test cases for ft_strncmp
+    printf("Test 1: ft_strncmp(\"t\", \"\", 0) == 0 -> ");
+    printf("%d\n", ft_strncmp("t", "", 0) == 0);
+
+    printf("Test 2: ft_strncmp(\"1234\", \"1235\", 3) == 0 -> ");
+    printf("%d\n", ft_strncmp("1234", "1235", 3) == 0);
+
+    printf("Test 3: ft_strncmp(\"1234\", \"1235\", 4) < 0 -> ");
+    printf("%d\n", ft_strncmp("1234", "1235", 4) < 0);
+
+    printf("Test 4: ft_strncmp(\"1234\", \"1235\", -1) < 0 -> ");
+    printf("%d\n", ft_strncmp("1234", "1235", -1) < 0);
+
+    printf("Test 5: ft_strncmp(\"\", \"\", 42) == 0 -> ");
+    printf("%d\n", ft_strncmp("", "", 42) == 0);
+
+    return 0;
+}
 
 //****ft_strnstr****ok
 // int main(void)
