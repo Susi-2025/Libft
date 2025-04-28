@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 12:04:20 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 19:56:22 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 21:49:05 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,19 +18,17 @@ char	*ft_strtrim(char const *str, char const *set)
 	unsigned int	k;
 	char			*out;
 
-	end = ft_strlen(str) - 1;
 	start = 0;
-	k = 0;
-	if (!str || !set)
-		return (NULL);
-	while (ft_strchr(set, str[start]))
+	while (str[start] && ft_strchr(set, str[start]))
 		start++;
-	while (ft_strrchr(set, str[end]))
+	end = ft_strlen(str);
+	while (end > start && ft_strrchr(set, str[end - 1]))
 		end--;
-	out = (char *)malloc(end - start + 2);
+	out = (char *)malloc(end - start + 1);
 	if (!out)
 		return (NULL);
-	while (start <= end)
+	k = 0;
+	while (start < end)
 	{
 		out[k] = str[start];
 		start++;

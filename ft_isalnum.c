@@ -6,10 +6,9 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:02:17 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/15 12:48:16 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 22:45:39 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_isalnum(int c)
 {

@@ -6,10 +6,9 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:52:51 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/15 12:48:48 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 22:46:30 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_isascii(int c)
 {

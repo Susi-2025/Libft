@@ -6,10 +6,9 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:27:31 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 16:40:28 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 22:52:02 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

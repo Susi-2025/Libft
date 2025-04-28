@@ -4,17 +4,16 @@ SRCS = ft_isalnum.c ft_isascii.c ft_bzero.c ft_atoi.c \
        ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c \
        ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c \
        ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
-       ft_strampi.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
+       ft_strmapi.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
        ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 	   ft_strlcpy.c
 
-SRCBS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
-		ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-		ft_lstmap.c ft_lstnew.c ft_lstsize.c
+SRCBS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
+		ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
+		ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 OBJBS = $(SRCBS:.c=.o)
-OBJS_ALL = $(OBJS) $(OBJBS)
 
 NAME = libft.a
 LIBC = ar rcs
@@ -25,8 +24,8 @@ RM = rm -f
 .c .o:
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS_ALL)
-	$(LIBC) $(NAME) $(OBJS_ALL)
+$(NAME): $(OBJS)
+	$(LIBC) $(NAME) $(OBJS)
 
 all: $(NAME)
 
@@ -34,12 +33,15 @@ test: $(NAME)
 	$(CC) $(CFLAGS) main.c -L. -lft -o test_run
 	./test_run
 
+bonus: $(OBJS) $(OBJBS)
+	$(LIBC) $(NAME) $(OBJS) $(OBJBS)
+
 clean:
-	$(RM) $(OBJS_ALL) test_run
+	$(RM) $(OBJS) $(OBJBS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean re
+.PHONY: all clean fclean bonus re

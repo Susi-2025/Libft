@@ -6,10 +6,9 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:11:15 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/16 14:34:14 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 22:55:29 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_toupper(int c)
 {

@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strampi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 16:11:11 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 16:24:35 by vinguyen         ###   ########.fr       */
+/*   Created: 2025/04/28 11:13:33 by vinguyen          #+#    #+#             */
+/*   Updated: 2025/04/28 22:38:25 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strampi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
-	char			*out;
+	t_list	*new_list;
+	t_list	*new_node;
 
-	i = 0;
-	while (s[i])
-		i++;
-	out = (char *)malloc(i + 1);
-	if (!out)
-		return (0);
-	i = 0;
-	while (s[i])
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = NULL;
+	while (lst)
 	{
-		out[i] = f(i, s[i]);
-		i++;
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	out[i] = '\0';
-	return (out);
+	return (new_list);
 }
