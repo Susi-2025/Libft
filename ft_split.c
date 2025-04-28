@@ -6,19 +6,10 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:47:43 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/23 17:16:01 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 11:16:04 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-// unsigned int	ft_strlen(const char *s)
-// {
-// 	unsigned int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 		i++;
-// 	return (i);
-// }
 
 unsigned int	ft_count(const char *s, char c)
 {
@@ -69,7 +60,6 @@ char	*ft_assign(char *s, char c)
 		i++;
 		start++;
 	}
-//	s = s + end;
 	out_sub[i] = '\0';
 	return (out_sub);
 }
@@ -93,13 +83,6 @@ char	**ft_split(char const *s, char c)
 			s_temp++;
 		if (*s_temp == '\0')
 			break ;
-		out[i] = ft_assign(s_temp, c);
-		s_temp = s_temp + ft_strlen(out[i]) + 1;
-		i++;
-	}
-	{
-		while (*s_temp == c)
-			s_temp++;
 		out[i] = ft_assign(s_temp, c);
 		s_temp = s_temp + ft_strlen(out[i]) + 1;
 		i++;
