@@ -6,12 +6,12 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 12:04:20 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/22 14:48:30 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:33:40 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-unsigned int	find_start(char const *str, char const *set)
+static unsigned int	find_start(char const *str, char const *set)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -31,7 +31,7 @@ unsigned int	find_start(char const *str, char const *set)
 	return (0);
 }
 
-unsigned int	find_end(char const *str, char const *set, unsigned int len)
+static unsigned int	find_end(char const *str, char const *set, unsigned int len)
 {
 	unsigned int	i;
 	unsigned int	j;

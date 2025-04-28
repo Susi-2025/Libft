@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 11:17:16 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:42:50 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,38 +305,38 @@
 // }
 
 // //****ft_putstr_fd ****/
-// int main(void)
-// {
-//     char s[] = "Hello";
-//     ft_putstr_fd (s, 1);
-//     ft_putstr_fd ("\n", 1);
-//     ft_putstr_fd (s, 2);
-//     ft_putstr_fd ("\n", 1);
-//     ft_putstr_fd (s, 0);
-//     ft_putstr_fd ("\n", 1);
-//     return 0;
-// }
+int main(void)
+{
+    char s[] = "Hello";
+    ft_putstr_fd (s, 1);
+    ft_putstr_fd ("\n", 1);
+    ft_putstr_fd (s, 2);
+    ft_putstr_fd ("\n", 1);
+    ft_putstr_fd (s, 0);
+    ft_putstr_fd ("\n", 1);
+    return 0;
+}
 
 // ****ft_split */
-int main()
-{
-  char first[] = "HHHHH you H baby1231";
-  char c = 'H';
-  unsigned int count = ft_count(first, c);
-  printf("The string %s has been cut by %c to %i strings \n", first, c, count);
-  char **out = ft_split(first, c);
-  for (unsigned int i = 0; i <= count; i++)
-  {
-    if (out[i] != NULL)
-      printf("New string is %s \n", out[i]);
-    else
-      printf("NULL pointer reached at index %d\n", i);
-  }
-  //if (out[count + 1] == NULL)
-  //  printf("NULL pointer reached at index %d\n", count + 1);
-    //printf("New string is %s \n", out);
-  return(0);
-}
+// int main()
+// {
+//   char first[] = "HHHHH you H baby1231";
+//   char c = 'H';
+//   unsigned int count = ft_count(first, c);
+//   printf("The string %s has been cut by %c to %i strings \n", first, c, count);
+//   char **out = ft_split(first, c);
+//   for (unsigned int i = 0; i <= count; i++)
+//   {
+//     if (out[i] != NULL)
+//       printf("New string is %s \n", out[i]);
+//     else
+//       printf("NULL pointer reached at index %d\n", i);
+//   }
+//   //if (out[count + 1] == NULL)
+//   //  printf("NULL pointer reached at index %d\n", count + 1);
+//     //printf("New string is %s \n", out);
+//   return(0);
+// }
 
 //****ft_strampi**** */
 // char alt_case(unsigned int i, char c)

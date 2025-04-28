@@ -7,7 +7,14 @@ SRCS = ft_isalnum.c ft_isascii.c ft_bzero.c ft_atoi.c \
        ft_strampi.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
        ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
+SRCBS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+		ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+		ft_lstmap.c ft_lstnew.c ft_lstsize.c
+
 OBJS = $(SRCS:.c=.o)
+OBJBS = $(SRCBS:.c=.o)
+OBJS_ALL = $(OBJS) $(OBJBS)
+
 NAME = libft.a
 LIBC = ar rcs
 CC = gcc
@@ -17,8 +24,8 @@ RM = rm -f
 .c .o:
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	$(LIBC) $(NAME) $(OBJS)
+$(NAME): $(OBJS_ALL)
+	$(LIBC) $(NAME) $(OBJS_ALL)
 
 all: $(NAME)
 
@@ -27,7 +34,7 @@ test: $(NAME)
 	./test_run
 
 clean:
-	$(RM) $(OBJS) test_run
+	$(RM) $(OBJS_ALL) test_run
 
 fclean: clean
 	$(RM) $(NAME)

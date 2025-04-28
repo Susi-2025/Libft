@@ -6,12 +6,12 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:10:33 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/23 09:40:44 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:31:25 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-unsigned int	count_int(long n)
+static unsigned int	count_int(long n)
 {
 	unsigned int	i;
 

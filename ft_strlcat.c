@@ -6,12 +6,12 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:27:14 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/16 12:26:53 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:33:01 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	len_str(const char *str)
+static size_t	len_str(const char *str)
 {
 	size_t	len;
 

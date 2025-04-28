@@ -6,12 +6,12 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:47:43 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 11:16:04 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:32:17 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-unsigned int	ft_count(const char *s, char c)
+static unsigned int	ft_count(const char *s, char c)
 {
 	unsigned int	start;
 	unsigned int	len;
@@ -38,7 +38,7 @@ unsigned int	ft_count(const char *s, char c)
 	return (count_word);
 }
 
-char	*ft_assign(char *s, char c)
+static char	*ft_assign(char *s, char c)
 {
 	unsigned int	start;
 	unsigned int	end;

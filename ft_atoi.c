@@ -6,12 +6,12 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:47:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/21 19:22:57 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:30:47 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	sign_check(char *str1)
+static int	sign_check(char *str1)
 {
 	int	sign;
 
