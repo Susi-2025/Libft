@@ -6,19 +6,19 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:12:41 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 11:12:44 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 11:28:47 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if( lst && new)
-    {
-        new -> next = *lst;
-        *lst = new;
-    }
-    else
-        return;
+	if (lst && new)
+	{
+		new -> next = *lst;
+		*lst = new;
+	}
+	else
+		return ;
 }

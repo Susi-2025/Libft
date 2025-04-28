@@ -29,4 +29,8 @@ test: $(NAME)
 clean:
 	$(RM) $(OBJS) test_run
 
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
 .PHONY: all clean re
