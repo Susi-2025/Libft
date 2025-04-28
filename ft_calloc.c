@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 18:59:59 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/23 09:46:55 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/28 18:23:41 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,6 +14,7 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t			i;
+	size_t			check_overflow;
 	unsigned char	*ptr;
 
 	i = 0;
@@ -23,11 +24,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		*ptr = '\0';
 		return (ptr);
 	}
+	check_overflow = nmemb * size;
+	if (check_overflow / nmemb != size)
+		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
-	{
-		return (0);
-	}
+		return (NULL);
 	while (i < (nmemb * size))
 	{
 		ptr[i] = 0;
