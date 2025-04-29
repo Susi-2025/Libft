@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 17:40:57 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/29 10:04:31 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -607,6 +607,7 @@
 //     print_bytes(buffer_test, size);
 //     return(0);
 // }
+// extra test1 for strlcat
 // int main(void)
 // {
 //     char dest[30];
@@ -707,6 +708,17 @@
 //     return 0;
 // }
 
+// extra test2 for strlcat
+// int main(void)
+// {
+//     char b[0xF] = "nyan !";
+    
+//     ft_strlcat(((void*)0), b, 0);
+//     //printf("Return value of std function: %zu \n", strlcat(((void*)0), b, 0));
+//     printf("Return value of custom function: %zu \n", ft_strlcat(((void*)0), b, 0));
+//     return 0;
+// }
+
 // ****ft_strlcpy test****ok- 
 // Length of source: 25, length of destination: 8. Must change size in some cases:
 // - lesser than length of dest to see only return. Example: 5
@@ -787,6 +799,7 @@
 //         }
 //         return 0;  
 // }
+// extra test for strncmp
 // int main(void)
 // {
 //     // Test cases for ft_strncmp
@@ -807,6 +820,18 @@
 
 //     return 0;
 // }
+// extra test for strncmp
+// int main(void)
+// {
+//     char *s1 = "\200";
+//     char *s2 = "\0";
+//     //int i1 = ((strncmp(s1, s2, 1) > 0) ? 1 : ((strncmp(s1, s2, 1) < 0) ? -1 : 0));
+//     //int i2 = ((ft_strncmp(s1, s2, 1) > 0) ? 1 : ((ft_strncmp(s1, s2, 1) < 0) ? -1 : 0));
+
+//     printf("Std result: %d \n", (strncmp(s1, s2, 1)));
+//     printf("Custom result: %d \n", (ft_strncmp(s1, s2, 1)));
+//     return 0;
+// }
 
 //****ft_strnstr****ok
 // int main(void)
@@ -821,6 +846,23 @@
 //         }
 //     return 0;
 // }
+//extra test for strnstr
+// #include <stdio.h>
+// #include <string.h>
+
+#include <stdio.h>
+
+int main(void)
+{
+    char *empty = (char*)"";
+    
+    // Testing your custom ft_strnstr with various inputs
+    printf("Return Value of Cus: %s \n", ft_strnstr(((void*)0), "fake", 0)); // Test with NULL haystack and size 0
+    printf("Return Value of Cus: %s \n", ft_strnstr(empty, "", 0)); // Test with empty haystack and empty needle, with size 0
+    
+    return 0;
+}
+
 
 // #include <stdio.h>
 // #include <string.h>

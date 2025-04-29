@@ -60,7 +60,11 @@
     "ctype.h": "c",
     "string.h": "c",
     "libft.h": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "array": "c",
+    "string_view": "c",
+    "span": "c",
+    "type_traits": "c"
   },
   "makefile.configureOnOpen": true
 }
