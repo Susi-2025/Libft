@@ -64,7 +64,8 @@
     "array": "c",
     "string_view": "c",
     "span": "c",
-    "type_traits": "c"
+    "type_traits": "c",
+    "stdlib.h": "c"
   },
   "makefile.configureOnOpen": true
 }

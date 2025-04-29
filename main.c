@@ -6,11 +6,15 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/29 12:12:10 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:49:26 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+# include <stdio.h>
+# include <ctype.h>
+# include <string.h>
 
 //****ft_atoi****ok
 // int main(void)
@@ -441,25 +445,26 @@
 // }
 
 // ****ft_split */
-// int main()
-// {
-//   char first[] = "HHHHH you H baby1231";
-//   char c = 'H';
-//   unsigned int count = ft_count(first, c);
-//   printf("The string %s has been cut by %c to %i strings \n", first, c, count);
-//   char **out = ft_split(first, c);
-//   for (unsigned int i = 0; i <= count; i++)
-//   {
-//     if (out[i] != NULL)
-//       printf("New string is %s \n", out[i]);
-//     else
-//       printf("NULL pointer reached at index %d\n", i);
-//   }
-//   //if (out[count + 1] == NULL)
-//   //  printf("NULL pointer reached at index %d\n", count + 1);
-//     //printf("New string is %s \n", out);
-//   return(0);
-// }
+int main()
+{
+  char first[] = "HHHHH you H baby1231";
+  char c = 'H';
+  //unsigned int count = ft_count(first, c);
+  unsigned int count = 2;
+  printf("The string %s has been cut by %c to %i strings \n", first, c, count);
+  char **out = ft_split(first, c);
+  for (unsigned int i = 0; i <= count; i++)
+  {
+    if (out[i] != NULL)
+      printf("New string is %s \n", out[i]);
+    else
+      printf("NULL pointer reached at index %d\n", i);
+  }
+  //if (out[count + 1] == NULL)
+  //  printf("NULL pointer reached at index %d\n", count + 1);
+    //printf("New string is %s \n", out);
+  return(0);
+}
 
 //****ft_strmapi**** */
 // char alt_case(unsigned int i, char c)
