@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:47:43 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/28 13:32:17 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:07:44 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -54,6 +54,8 @@ static char	*ft_assign(char *s, char c)
 	end = i;
 	i = 0;
 	out_sub = (char *)malloc(end - start + 1);
+	if (!out_sub)
+		return (NULL);
 	while (start < end)
 	{
 		out_sub[i] = s[start];
@@ -62,6 +64,16 @@ static char	*ft_assign(char *s, char c)
 	}
 	out_sub[i] = '\0';
 	return (out_sub);
+}
+
+static void	ft_free(char **s, int n)
+{
+	while (n >= 0)
+	{
+		free (s[n]);
+		n--;
+	}
+	free (s);
 }
 
 char	**ft_split(char const *s, char c)
@@ -84,6 +96,8 @@ char	**ft_split(char const *s, char c)
 		if (*s_temp == '\0')
 			break ;
 		out[i] = ft_assign(s_temp, c);
+		if (out[i] == NULL)
+			ft_free(out, i - 1);
 		s_temp = s_temp + ft_strlen(out[i]) + 1;
 		i++;
 	}

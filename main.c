@@ -6,7 +6,7 @@
 /*   By: vinguyen <vinguyen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:01:19 by vinguyen          #+#    #+#             */
-/*   Updated: 2025/04/29 10:04:31 by vinguyen         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:12:10 by vinguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -461,7 +461,7 @@
 //   return(0);
 // }
 
-//****ft_strampi**** */
+//****ft_strmapi**** */
 // char alt_case(unsigned int i, char c)
 // {
 //     if (i % 2 == 0 && c >= 'a' && c <= 'z')
@@ -719,6 +719,7 @@
 //     return 0;
 // }
 
+
 // ****ft_strlcpy test****ok- 
 // Length of source: 25, length of destination: 8. Must change size in some cases:
 // - lesser than length of dest to see only return. Example: 5
@@ -850,18 +851,18 @@
 // #include <stdio.h>
 // #include <string.h>
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(void)
-{
-    char *empty = (char*)"";
+// int main(void)
+// {
+//     char *empty = (char*)"";
     
-    // Testing your custom ft_strnstr with various inputs
-    printf("Return Value of Cus: %s \n", ft_strnstr(((void*)0), "fake", 0)); // Test with NULL haystack and size 0
-    printf("Return Value of Cus: %s \n", ft_strnstr(empty, "", 0)); // Test with empty haystack and empty needle, with size 0
+//     // Testing your custom ft_strnstr with various inputs
+//     printf("Return Value of Cus: %s \n", ft_strnstr(((void*)0), "fake", 0)); // Test with NULL haystack and size 0
+//     printf("Return Value of Cus: %s \n", ft_strnstr(empty, "", 0)); // Test with empty haystack and empty needle, with size 0
     
-    return 0;
-}
+//     return 0;
+// }
 
 
 // #include <stdio.h>
